@@ -14,10 +14,10 @@ exports.create = (req, res) => {
 
     // Create a User
     const user = {
-        name: req.body.name,
-        age: req.body.age,
-        weight: req.body.weight,
-        height: req.body.height
+        name: req?.body?.name,
+        age: req?.body?.age,
+        weight: req?.body?.weight,
+        height: req?.body?.height
 
     };
 
@@ -132,17 +132,3 @@ exports.deleteAll = (req, res) => {
             });
         });
 };
-
-// find all published User
-/*exports.findAllPublished = (req, res) => {
-    User.findAll({ where: { published: true } })
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message:
-                    err.message || "Some error occurred while retrieving users."
-            });
-        });
-};*/
